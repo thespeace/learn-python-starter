@@ -10,5 +10,4 @@ print(name.replace("o","❤")) #해당 글자를 찾아서 원하는 글자로 �
 #쉼표를 사용해서 데이터를 분리한다.
 days_of_week = ["Mon","Tue","Wed","Thur","Fri","Sat","Sun"]
 print(days_of_week)
-
-
+print(days_of_week[2])
