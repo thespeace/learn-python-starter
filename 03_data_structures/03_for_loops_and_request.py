@@ -1,4 +1,5 @@
-# import requests import get
+#python standard library에 기본으로 포함되어 있지 않은 module을 다운로드 받았다.
+from requests import get
 
 websites = ( #이름을 복수형으로 지어주는 컨벤션이 있다.
     "google.com",
@@ -6,6 +7,8 @@ websites = ( #이름을 복수형으로 지어주는 컨벤션이 있다.
     "twitter.com",
     "https://facebook.com"
 )
+
+results = {} #결과를 dicts로 만들어보자!
 
 # for in 반복문 : tuple 혹은 집합체 각각의 item에 대한 코드를 실행 할 수 있다.
 for website in websites: #websites tuples에서 item의 갯수만큼 사이클을 돌릴것이고, 각 사이클에서 tuple의 item을 가지고 와 아래의 함수에 대입하여 코드를 실행한다.(item의 갯수만큼)
@@ -18,7 +21,16 @@ for website in websites: #websites tuples에서 item의 갯수만큼 사이클�
         print("i can fix!")
         website = f"https://{website}"
     print("fix :",website)
+    response = get(website) #get function은 response를 return해준다.
+    if response.status_code == 200:
+        print(f"{website} is OK")
+        results[website] = "OK"
+    else:
+        print(f"{website} not OK")
+        results[website] = "FAILED"
 
+print("=====================================================================================================================")
+print(results)
 
 """
 request란?
