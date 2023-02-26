@@ -11,3 +11,12 @@
 
 ## Example 1) Go to "01_weworkremotely_scraping.py"
 ## Example 2) Go to "02_indeed_scraping.py"
+#
+
+---
+## 실습에 필요한 패키지들
+```aidl
+pip install beautifulsoup4
+pip install requests
+pip install selenium
+```
