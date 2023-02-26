@@ -8,3 +8,6 @@ def save_to_file(file_name, jobs):
         file.write(f"{job['position']},{job['company']},{job['location']},{job['link']}\n") #job은 dictionary이기 때문에 대괄호로 key적어서 value 적어주기 / 파일 작성-
 
     file.close() #파일 저장.
+
+
+# save_to_file(keyword, jobs)
