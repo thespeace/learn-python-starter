@@ -31,9 +31,9 @@ def extract_wwr_jobs(keyword): #재사용을 위해 함수화
                 # print("============================================================")
                 job_data = {
                     'link' : f"https://weworkremotely.com{link}",
-                    'company' : company.string,
-                    'region' : region.string,
-                    'position' : title.string
+                    'company' : company.string.replace(","," "),
+                    'location' : region.string.replace(","," "),
+                    'position' : title.string.replace(","," ")
                 }
                 results.append(job_data)
         # print(results) # 크롤링의 결과값을 dictionary로 가득 찬 list로 완성!
