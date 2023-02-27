@@ -10,7 +10,10 @@
 </head>
 <body>
     <main class="container">
-        <h1>Search Results for "{{keyword}}" : </h1>
+        <hgroup>
+            <h1>Search Results for "{{keyword}}" : </h1> <!--변수 출력-->
+            <a target="_blank" href="/export?keyword={{keyword}}">Export to file</a>
+        </hgroup>
         <figure>
             <table role="grid">
                 <thead>
@@ -22,14 +25,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for job in jobs %}
+                    {% for job in jobs %} <!--코드 출력-->
                     <tr>
                         <td>{{job.position}}</td>
                         <td>{{job.company}}</td>
                         <td>{{job.location}}</td>
                         <td><a href="{{job.link}}" target="_blank">Apply now &rarr;</a></td>
                     </tr>
-                    {% endfor %}
+                    {% endfor %} <!--for문을 닫을 때 필수 작성-->
                 </tbody>
             </table>
         </figure>
